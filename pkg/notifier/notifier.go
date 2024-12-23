@@ -30,3 +30,7 @@ func (n *Notifier) SendNotification(channel, message string) error {
 	log.Printf("Notificação enviada: %s -> %s", channel, message)
 	return nil
 }
+
+func (n *Notifier) Close() error {
+	return n.redisClient.Close()
+}

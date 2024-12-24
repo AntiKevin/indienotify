@@ -21,6 +21,10 @@ func NewNotifier(redisHost, redisPort, redisPassword string) *Notifier {
 	return &Notifier{redisClient: client}
 }
 
+func (m *Notifier) IsValidChannel(channel string) bool {
+	return channel != "" && channel != " " && channel != "\n" && channel != "\t"
+}
+
 func (n *Notifier) SendNotification(channel, message string) error {
 	ctx := context.Background()
 	if err := n.redisClient.Publish(ctx, channel, message).Err(); err != nil {
@@ -29,6 +33,15 @@ func (n *Notifier) SendNotification(channel, message string) error {
 	}
 	log.Printf("Notificação enviada: %s -> %s", channel, message)
 	return nil
+}
+
+func (n *Notifier) ReadNotifications(channel string) (string, error) {
+	ctx := context.Background()
+	pubsub := n.redisClient.Subscribe(ctx, channel)
+	defer pubsub.Close()
+
+	msg, err := pubsub.ReceiveMessage(ctx)
+	return msg.Payload, err
 }
 
 func (n *Notifier) Close() error {

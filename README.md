@@ -13,8 +13,8 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Endpoint de HealthCheck
 - [x] Endpoint Rest de envio de notificaçao (PUB/SUB)
 - [x] Modulo de envio de notificação (PUB/SUB)
+- [x] Endpoint para Subscribe em um canal de notificação
 - [ ] Modulo de envio de notificaçao persistente (REDIS-STREAM)
-- [ ] Endpoint para Subscribe em um canal de notificação
 
 ## 💻 Pré-requisitos
 

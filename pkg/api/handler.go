@@ -15,7 +15,7 @@ func SetupRoutes(r *gin.Engine) {
 	r.GET("/api/ws/receive/:channel", ReceiveNotificationHandler)
 }
 
-// Controlador para o endpoint /send
+// Controlador para o endpoint de envio de notificações
 func SendNotificationHandler(c *gin.Context) {
 	var request struct {
 		Channel string `json:"channel" binding:"required"`
@@ -43,7 +43,7 @@ func SendNotificationHandler(c *gin.Context) {
 	c.JSON(200, gin.H{"status": "Notification sent"})
 }
 
-// função para lidar com a conexão websocket
+// controlador para o endpoint de recebimento de notificações websocket
 func ReceiveNotificationHandler(c *gin.Context) {
 
 	ws, err := upgradeConnection(c)

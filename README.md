@@ -20,8 +20,9 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-- Você instalou a versão mais recente da linguagem `Go`
+- Você instalou a versão mais recente da linguagem `Go`.
 - Você tem uma máquina `Windows, Linux ou Mac>`.
+- Você tem um serviço redis funcionando localmente.
 
 ## ☕ Desenvolvendo para o IndieNotify 
 

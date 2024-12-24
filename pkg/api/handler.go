@@ -8,7 +8,7 @@ import (
 
 // Função para configurar as rotas da API
 func SetupRoutes(r *gin.Engine) {
-	r.POST("/send", SendNotificationHandler)
+	r.POST("/api/send", SendNotificationHandler)
 }
 
 // Controlador para o endpoint /send

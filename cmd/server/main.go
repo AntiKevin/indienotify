@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"github.com/antikevin/indienotify/pkg/api"
+	"github.com/antikevin/indienotify/package/api"
 	"github.com/spf13/viper"
 )
 

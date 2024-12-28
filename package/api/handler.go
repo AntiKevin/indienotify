@@ -3,7 +3,7 @@ package api
 import (
 	"log"
 
-	"github.com/antikevin/indienotify/pkg/notifier"
+	"github.com/antikevin/indienotify/package/notifier"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"github.com/spf13/viper"

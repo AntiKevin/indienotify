@@ -11,6 +11,7 @@ var upgrader = websocket.Upgrader{
 	WriteBufferSize: 1024,
 }
 
+// Função para atualizar a conexão HTTP para uma conexão websocket
 func upgradeConnection(c *gin.Context) (*websocket.Conn, error) {
 	ws, err := upgrader.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
